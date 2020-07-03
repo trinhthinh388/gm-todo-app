@@ -1,14 +1,20 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import TodoInput from './components/TodoInput';
-
+import TodoList from './components/TodoList';
 
 export default function App(){
+    const [todosList, setTodosList] = useState([]);
+
+    function UpdateList(newList){
+        setTodosList(newList);
+    }
     return(
         <div id="app" className="d-flex justify-content-center align-items-center flex-column">
             <h1 className="app__logo">todos</h1>
             <div className="app_todo-container container">
                 <div className="row">
-                    <TodoInput></TodoInput>
+                    <TodoInput list={todosList} UpdateList={UpdateList}></TodoInput>
+                    <TodoList list={todosList} UpdateList={UpdateList}/>
                 </div>
             </div>
         </div>

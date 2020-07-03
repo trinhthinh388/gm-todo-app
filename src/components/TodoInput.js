@@ -2,15 +2,19 @@ import React, {useState, useEffect} from 'react';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faChevronDown} from '@fortawesome/free-solid-svg-icons';
 
-export default function TodoInput(){
-    const [todosList, setTodosList] = useState([]);
+export default function TodoInput(props){
+    
     const [inputValue, setInputValue] = useState("");
 
     function onInputKeyDownHandle(e){
         if(e.key === 'Enter'){
-            setTodosList([...todosList, ...[inputValue]]);
+            let newItem = {
+                content: inputValue,
+                done: false,
+            }
+            props.UpdateList([...props.list, ...[newItem]]);
             setInputValue("");
-            console.log(todosList);
+            console.log(props.list);
         }
     }
 
