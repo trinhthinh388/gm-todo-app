@@ -9684,10 +9684,6 @@ body {
   display: block !important;
 }
 
-#app {
-  height: 100vh;
-}
-
 #app .app__logo {
   font-weight: 100;
   color: rgba(175, 47, 47, 0.15);

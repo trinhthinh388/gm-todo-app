@@ -21,9 +21,21 @@ export default function TodoInput(props){
     function onChangeHandle(e){
         setInputValue(e.target.value);
     }
+
+    function onToggleButtonClick(){
+        let _list = props.list.slice();
+        let value = _list[0].done;
+        console.log(value);
+        _list.forEach(item =>{
+            item.done = !value;
+        });
+        props.UpdateList(_list);
+    }
+
+
     return(
         <div className="app__input d-flex align-items-center col-lg-6">
-            <FontAwesomeIcon className="input__toggle" icon={faChevronDown} size="2x"/>
+            <FontAwesomeIcon onClick={onToggleButtonClick} className="input__toggle" icon={faChevronDown} size="2x"/>
             <input type="text" value={inputValue} onKeyDown={onInputKeyDownHandle} onChange={onChangeHandle} placeholder="What needs to be done?"></input>
         </div>
     );

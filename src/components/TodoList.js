@@ -19,8 +19,12 @@ export default function TodoList(props){
         UpdateList(_list);
     }
     
-    function deleteItem(content, index){
-
+    function deleteItem(index){
+        let _list = list.slice();
+        delete _list[index];
+        _list = [..._list.slice(0, index),... _list.slice(index + 1, _list.length)];
+        console.log(_list);
+        UpdateList(_list);
     }
 
     return(
@@ -28,7 +32,7 @@ export default function TodoList(props){
             <div className="row flex-column justify-content-center">
                 {
                     props.list.map((item, index) => {
-                        return <TodoItem key={`todo-item-${index}`} index={index} UpdateItem={updateItem} content={item.content} check={item.done}/>
+                        return <TodoItem key={`todo-item-${index}`} index={index} deleteItem={deleteItem} UpdateItem={updateItem} content={item.content} check={item.done}/>
                     })
                 }
             </div>
