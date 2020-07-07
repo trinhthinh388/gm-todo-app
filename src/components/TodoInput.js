@@ -2,6 +2,8 @@ import React, {useState, useEffect} from 'react';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faChevronDown} from '@fortawesome/free-solid-svg-icons';
 
+
+
 export default function TodoInput(props){
     
     const [inputValue, setInputValue] = useState("");
@@ -26,7 +28,7 @@ export default function TodoInput(props){
     function onToggleButtonClick(){
         let _list = props.list.slice();
         let value = _list[0].done;
-        console.log(value);
+        
         _list.forEach(item =>{
             item.done = !value;
         });
