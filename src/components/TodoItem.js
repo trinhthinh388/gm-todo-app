@@ -15,12 +15,16 @@ export default class TodoItem extends React.Component{
     }
 
     onCompleteClickHandle =()=>{
-        this.props.UpdateItem(null, !this.props.check, this.props.index);
+        this.props.UpdateItem(
+            null, 
+            !this.props.check,
+            this.props.index
+        );
     }
 
     onInputChangeHandle =(e)=>{
         let value = e.currentTarget.value;
-        console.log(value);
+        
         this.props.UpdateItem(value, false, this.props.index);
     }
 
