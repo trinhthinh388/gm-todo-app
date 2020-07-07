@@ -25,9 +25,15 @@
         }
     }
     .item__content{
-        font-size: 2rem;
-        color: #000000;
-        font-weight: 100;
+        width: 90%;
+        input{
+            width: 100%;
+            font-size: 2rem;
+            color: #000000;
+            font-weight: 100;
+            border: none;
+            outline: none;
+        }
     }
     .item__delete{
         position: absolute;

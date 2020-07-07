@@ -9755,9 +9755,16 @@ body {
 }
 
 .list__item .item__content {
+  width: 90%;
+}
+
+.list__item .item__content input {
+  width: 100%;
   font-size: 2rem;
   color: #000000;
   font-weight: 100;
+  border: none;
+  outline: none;
 }
 
 .list__item .item__delete {
