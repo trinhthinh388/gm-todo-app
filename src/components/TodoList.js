@@ -27,11 +27,25 @@ export default function TodoList(props){
         UpdateList(_list);
     }
 
+    function filterList(){
+        let filter  = props.filterState;
+        let _list = props.list;
+        if(filter === "All"){
+            return _list;
+        }
+        else if(filter === "Completed"){
+            return _list.filter(item => item.done === true);
+        }
+        else if(filter === "Active"){
+            return _list.filter(item => item.done === false);
+        }
+    }
+
     return(
         <div className="todo__list container">
             <div className="row flex-column justify-content-center">
                 {
-                    props.list.map((item, index) => {
+                    filterList().map((item, index) => {
                         return <TodoItem key={`todo-item-${index}`} index={index} deleteItem={deleteItem} UpdateItem={updateItem} content={item.content} check={item.done}/>
                     })
                 }

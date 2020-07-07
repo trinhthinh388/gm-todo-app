@@ -9754,13 +9754,14 @@ body {
   width: 90%;
 }
 
-.list__item .item__content input {
+.list__item .item__content input, .list__item .item__content div {
   width: 100%;
   font-size: 2rem;
   color: #000000;
   font-weight: 100;
   border: none;
   outline: none;
+  word-wrap: break-word;
 }
 
 .list__item .item__delete {
@@ -9783,10 +9784,16 @@ body {
 
 #footer .footer__filter button {
   font-weight: 100;
+  outline: none;
 }
 
 #footer .footer__filter button:hover {
   border: 1px solid rgba(175, 47, 47, 0.15);
+}
+
+#footer .footer__filter button:focus {
+  outline: none;
+  box-shadow: none;
 }
 
 #footer .active {
@@ -9795,6 +9802,7 @@ body {
 
 #footer .footer__clear-btn {
   cursor: pointer;
+  outline: none;
 }
 
 #footer .footer__clear-btn:hover {

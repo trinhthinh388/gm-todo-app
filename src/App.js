@@ -5,7 +5,7 @@ import Footer from './components/Footer';
 
 export default function App(){
     const [todosList, setTodosList] = useState([]);
-
+    const [filter, setFilter]= useState("All");
     function UpdateList(newList){
         setTodosList(newList);
     }
@@ -15,8 +15,8 @@ export default function App(){
             <div className="app_todo-container container">
                 <div className="row flex-column">
                     <TodoInput list={todosList} UpdateList={UpdateList}></TodoInput>
-                    <TodoList list={todosList} UpdateList={UpdateList}/>
-                    <Footer list={todosList} UpdateList={UpdateList}/>
+                    <TodoList list={todosList} UpdateList={UpdateList} filterState={filter}/>
+                    <Footer list={todosList} UpdateList={UpdateList} filterState={filter} setFilterState={setFilter}/>
                 </div>
             </div>
         </div>

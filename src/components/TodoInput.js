@@ -7,6 +7,8 @@ export default function TodoInput(props){
     const [inputValue, setInputValue] = useState("");
 
     function onInputKeyDownHandle(e){
+        if(!inputValue || inputValue === "")
+            return;
         if(e.key === 'Enter'){
             let newItem = {
                 content: inputValue,
@@ -14,7 +16,6 @@ export default function TodoInput(props){
             }
             props.UpdateList([...props.list, ...[newItem]]);
             setInputValue("");
-            console.log(props.list);
         }
     }
 
