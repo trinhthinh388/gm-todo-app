@@ -22,8 +22,11 @@ export default function TodoList(props){
     function deleteItem(index){
         let _list = list.slice();
         delete _list[index];
-        _list = [..._list.slice(0, index),... _list.slice(index + 1, _list.length)];
-        console.log(_list);
+        _list = [
+            ..._list.slice(0, index),
+            ... _list.slice(index + 1, _list.length)
+        ];
+        
         UpdateList(_list);
     }
 
