@@ -1,0 +1,14 @@
+@import "../../node_modules//bootstrap/scss/bootstrap.scss";
+
+//fonts
+@import "./typography/typography";
+
+//base
+@import "./base/common";
+
+//components
+@import "./components/app";
+@import "./components/todos-input";
+@import "./components/todos-item";
+@import "./components//todos-list";
+@import "./components/footer";

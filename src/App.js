@@ -1,26 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useState, useEffect} from 'react';
+import TodoInput from './components/TodoInput';
+import TodoList from './components/TodoList';
+import Footer from './components/Footer';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default function App(){
+    const [todosList, setTodosList] = useState([]);
+    const [filter, setFilter]= useState("All");
+    function UpdateList(newList){
+        setTodosList(newList);
+    }
+    return(
+        <div id="app" className="d-flex justify-content-center align-items-center flex-column">
+            <h1 className="app__logo">todos</h1>
+            <div className="app_todo-container container">
+                <div className="row flex-column">
+                    <TodoInput list={todosList} UpdateList={UpdateList}></TodoInput>
+                    <TodoList list={todosList} UpdateList={UpdateList} filterState={filter}/>
+                    <Footer list={todosList} UpdateList={UpdateList} filterState={filter} setFilterState={setFilter}/>
+                </div>
+            </div>
+        </div>
+    )
 }
-
-export default App;
