@@ -1,0 +1,29 @@
+#footer{
+    position: relative;
+    font-weight: 100;
+    border: 1px solid rgba($color: #000000, $alpha: 0.2);
+    padding: 10px 20px;
+    .footer__filter{
+        button{
+            font-weight: 100;
+            &:hover{
+                border: 1px solid rgba(175, 47, 47, 0.15);
+            }
+        }
+    }
+
+    .active{
+        border: 1px solid rgba(175, 47, 47, 0.15);
+    }
+
+    .footer__clear-btn{
+        cursor: pointer;
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+
+    .page{
+        position: absolute;
+    }
+}

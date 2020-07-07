@@ -9773,4 +9773,35 @@ body {
 .todo__list {
   margin: 0 auto;
 }
+
+#footer {
+  position: relative;
+  font-weight: 100;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 10px 20px;
+}
+
+#footer .footer__filter button {
+  font-weight: 100;
+}
+
+#footer .footer__filter button:hover {
+  border: 1px solid rgba(175, 47, 47, 0.15);
+}
+
+#footer .active {
+  border: 1px solid rgba(175, 47, 47, 0.15);
+}
+
+#footer .footer__clear-btn {
+  cursor: pointer;
+}
+
+#footer .footer__clear-btn:hover {
+  text-decoration: underline;
+}
+
+#footer .page {
+  position: absolute;
+}
 /*# sourceMappingURL=main.css.map */

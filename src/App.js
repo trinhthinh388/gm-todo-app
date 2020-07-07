@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import TodoInput from './components/TodoInput';
 import TodoList from './components/TodoList';
+import Footer from './components/Footer';
 
 export default function App(){
     const [todosList, setTodosList] = useState([]);
@@ -15,6 +16,7 @@ export default function App(){
                 <div className="row flex-column">
                     <TodoInput list={todosList} UpdateList={UpdateList}></TodoInput>
                     <TodoList list={todosList} UpdateList={UpdateList}/>
+                    <Footer list={todosList} UpdateList={UpdateList}/>
                 </div>
             </div>
         </div>
